@@ -19,8 +19,9 @@
 <!--ACCESIBILIDAD: Corregir la inexistencia de un h1, pero lo dejo oculto-->
 		<h1 style="display: none;">Tu boda sin estrés</h1>
 <!--AUDIO-->
+<!--ACCESIBILIDAD: Añadir atributo title al iframe-->
 		<!--Truco para que funcione el autoplay en Chrome: iframe -->
-		<iframe src="audio/250-milliseconds-of-silence.mp3" allow="autoplay" style="display:none"></iframe>
+		<iframe src="audio/250-milliseconds-of-silence.mp3" allow="autoplay" style="display:none" title="audio en silencio"></iframe>
 		<audio controls preload="auto" autoplay loop>
 			<source src="audio/gramatik-hit-that-jive-original-mix.ogg" type="audio/ogg" />
 			<source src="audio/gramatik-hit-that-jive-original-mix.mp3" type="audio/mpeg" />
@@ -131,7 +132,8 @@
 					</article>	
 
 					<article id="videoBoda"> 
-						<iframe width="360" height="240" allow="autoplay" src="https://www.youtube.com/embed?listType=playlist&list=PLcidWlFzkDzxL6B0WyIZUMhN114wV9ia5&controls=2&loop=1&autoplay=1"></iframe>
+<!--ACCESIBILIDAD: Añadir atributo title al iframe-->
+						<iframe width="360" height="240" allow="autoplay" src="https://www.youtube.com/embed?listType=playlist&list=PLcidWlFzkDzxL6B0WyIZUMhN114wV9ia5&controls=2&loop=1&autoplay=1" title="Video boda"></iframe>
 						<!--Probando alternativa para solucionar problema de privacidad con el video:
 							<iframe width="360" height="240" src="https://www.youtube.com/embed/videoseries?list=PLcidWlFzkDzxL6B0WyIZUMhN114wV9ia5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						-->
