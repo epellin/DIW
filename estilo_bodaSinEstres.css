@@ -1,0 +1,151 @@
+/*WEB TU BODA SIN ESTRES*/
+/*---------------------------------------------------------------------------*/
+/*GENERAL*/
+
+@font-face{
+	font-family: myFirstFont;
+	src: url(fonts/KGTwoisBetterThanOne.ttf);
+}
+
+@font-face{
+	font-family: mySecondtFontLight;
+	src: url(fonts/Abadi-MT-Std-Condensed-Light.otf);
+}
+
+@font-face{
+	font-family: mySecondtFontBold;
+	src: url(fonts/AbadiMTCondensedExtraBold.ttf);
+}
+
+body{width: 100%;}
+h1, h2, .h2, h3, p {color:#2c2c2c;}
+
+h2 { font-family: myFirstFont; font-size: 3.3em;}
+
+h3{ font-family: mySecondtFontBold; font-size: 1.4em;}
+
+p{ font-family: mySecondtFontLight; font-size: 1em; line-height: 1,5em;}
+
+.textoRosa { color: #e19d9c;}
+
+a { text-decoration: none; color: #2c2c2c;}
+
+ul li { list-style-type: none;}
+
+.overflow-hidden { overflow: hidden;}
+/*---------------------------------------------------------------------------*/
+/*ANIMACION ANILLO*/
+section#ring {
+	z-index: 100;
+	width: 150px;
+	height: 150px;
+	background: url('images/anillo.png') no-repeat center;
+	background-position: center;
+	background-size: contain;
+	position: relative; 
+	top:8em;
+	animation: anilloRodando 6s ease-out infinite alternate running;
+}
+/*Por si mare mucho la animación para poder pausarla un rato.*/
+section#ring:hover { animation: anilloRodando paused;}
+
+@keyframes anilloRodando {
+	0% { top: -800px; left: 0; transform: rotate(0);}
+	20% { top:8em; left:0; transform: rotate(2turn);}
+	40% { top:8em;left: 70%; transform: rotate(4turn); width: 150px; height: 150px;}
+	60% { top:8em; left:0; transform: rotate(2turn); background-image: url('images/anillo.png');}
+	62% { top:8em; left: 0;transform: rotateY(180deg); background-image: url('images/anillo2.png'); width: 100px; height: 100px;}
+	64% { top:8em; left: 0;transform: rotateY(360deg);}
+	66% { top:8em; left: 0;transform: rotateY(180deg);}
+	68% { top:8em; left: 0;transform: rotateY(360deg);}
+	70% { top:8em; left: 0;transform: rotateY(180deg);}
+	72% { top:8em; left: 0;transform: rotateY(360deg); background-image: url('images/anillo2.png'); width: 100px; height: 100px;}
+	74% { top:8em; left: 0;transform: rotateY(360deg); background-image: url('images/anillo.png');}
+	87% { top:8em; left:0; transform: rotate(2turn); width: 150px; height: 150px;}
+	100% { top: -800px; left: 0; transform: rotate(0);}
+}
+
+/*---------------------------------------------------------------------------*/
+/*SECTION: contenedor principal*/
+
+#logoCabecera>img {margin: auto; display: block;}
+
+#contenedor_principal header { background-color: #aaa69d;}
+
+#contenedor_principal article{ background-color: black; margin:auto;}
+
+footer { background-color: #dddbd8;}
+
+#contenedor_principal {position: relative; top: 11em;}
+
+/*---------------------------------------------------------------------------*/
+/*BOTONES: menu de navegación lateral*/
+
+.btn-change {font-family: myFirstFont; font-size: 3em; letter-spacing: -0.06em; color: #969696; line-height:1.2em; border: 1px solid #ffffff;}
+
+#btn_sesion { background-color: #F79E9E;}
+#btn_contacto { background-color: #dfefee;}
+#btn_clientes { background-color: #fcf1d1;}
+#btn_sprint { background-color: #dddbd8;}
+
+#btn_sesion:hover, #btn_contacto:hover, #btn_clientes:hover, #btn_sprint:hover, #btn_xs_contacto:hover, #btn_xs_clientes:hover, #btn_xs_sprint:hover {
+	color: #2c2c2c;
+	background-color: white;
+	border: 1px solid #2c2c2c;
+	box-shadow: 0em 0em .2em .2em #2c2c2c;
+}
+
+#menu_hasta_md:hover #nav_oculto {display: block;}
+
+#btn_xs_contacto, #btn_xs_clientes, #btn_xs_sprint {
+	font-family: myFirstFont; 
+	font-size: 1.5em; 
+	letter-spacing: -0.06em; 
+	color: #2c2c2c; 
+	line-height:1.35em;
+}
+
+#btn_xs_contacto { background-color: #aed6d5; height: 3em; width: 6em;}
+#btn_xs_clientes { background-color: #f8dd8c;}
+#btn_xs_sprint { background-color: #aaa69d;}
+
+
+/*---------------------------------------------------------------------------*/
+/*MEDIA QUERIES*/
+/*Controla cabecera fija, margen superior y nav hamburguesa(xs-md) y borde de tableros (>=sm) y tamaño boton nav lateral (xl)*/
+
+@media screen and (max-width: 991px) { /*Propiedades para tamaño pequeño hasta lg, lg excluido*/
+	.fixed_hasta_md { position:fixed; z-index:2;}
+}
+
+@media screen and (min-width: 240px) {
+	#contenedor_principal, footer {position: relative; top: 6em;}
+	#nav_oculto {display:none;}
+	#row_white { width: 100%; height: 6em;}
+}
+
+@media screen and (min-width: 576px) {
+	#contenedor_principal, footer {top: 6.3em;}
+	#contenedor_principal article { border: 3px solid white;}
+	#contenedor_principal> div> header { border: 4px solid white;}
+	#btn_xs_contacto, #btn_xs_clientes, #btn_xs_sprint {font-size: 2em; line-height:1.3em;}
+	#row_white { height: 6.3em;}
+
+}
+
+@media screen and (min-width: 768px) {
+	#contenedor_principal {top: 8em;}
+	#contenedor_principal article#videoAnuncio {margin: auto 10px auto auto;}
+	#contenedor_principal article#videoBoda {margin: auto auto auto 10px;}
+	#btn_xs_contacto, #btn_xs_clientes, #btn_xs_sprint {font-size: 2.7em;}
+	#row_white { height: 8em;}
+}
+
+@media screen and (min-width: 992px) {
+	#contenedor_principal {position: static; top:0;}
+}
+
+@media screen and (min-width: 1200px) {
+	.btn-change { width: 75%;}
+}
+
