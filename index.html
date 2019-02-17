@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<!--ACCESIBILIDAD: Declaración del idioma-->
+<html lang="es">
 	<head>
 		<meta charset='utf-8'/>
 		<!--<meta name = "viewport" content="width = device-width, initial-scale = 1, user-scalable = yes"/>-->
@@ -15,8 +16,10 @@
 	</head>
 	
 	<body class="container-fluid m-0 p-0">
+<!--ACCESIBILIDAD: Corregir la inexistencia de un h1, pero lo dejo oculto-->
+		<h1 style="display: none;">Tu boda sin estrés</h1>
 <!--AUDIO-->
-		<!--Truco para que funcione el autoplay en Chrome -> iframe -->
+		<!--Truco para que funcione el autoplay en Chrome: iframe -->
 		<iframe src="audio/250-milliseconds-of-silence.mp3" allow="autoplay" style="display:none"></iframe>
 		<audio controls preload="auto" autoplay loop>
 			<source src="audio/gramatik-hit-that-jive-original-mix.ogg" type="audio/ogg" />
@@ -27,7 +30,8 @@
 				<param name="movie" value="player_mp3_mini.swf" />
 				<param name="bgcolor" value="#d1d2d3" />
 				<param name="FlashVars" value="mp3=audio/gramatik-hit-that-jive-original-mix.mp3" />
-				<embed href="player_mp3_mini.swf" bgcolor="#d1d2d3" width="270"
+<!--ACCESIBILIDAD: Etiqueta embed no estaba bien formada, cambio href por src-->
+				<embed src="player_mp3_mini.swf" bgcolor="#d1d2d3" width="270"
 					height="40" name="movie" type="application/x-shockwave-flash" flashvars="mp3=audio/gramatik-hit-that-jive-original-mix.mp3">
 				</embed>
 			</object>		
@@ -161,9 +165,11 @@
 			</section>
 			
 			<section id="rrss" class="d-flex col-12 col-md-4 col-lg-2 offset-lg-1 py-4 justify-content-end ">
-				<a href="#" class="col-auto my-0 mx-1 p-0"><img class="img-fluid"  src="images/icono_twitter.png" tag="icono twitter"></a>
-				<a href="#" class="col-auto my-0 mx-1 p-0"><img class="img-fluid"  src="images/icono_linkedin.png" tag="icono Linkedin"></a>
-				<a href="#" class="col-auto my-0 mx-1 p-0"><img class="img-fluid"  src="images/icono_fb.png" tag="icono Facebook"></a>
+				<!--ACCESIBILIDAD: Las siguientes imagenes no tenían bien puesto el atributo alt-->
+				<!--ACCESIBILIDAD: Modificados los hrefs de # para corregir la regla H2-->
+				<a href="https://twitter.com" class="col-auto my-0 mx-1 p-0"><img class="img-fluid"  src="images/icono_twitter.png" alt="icono twitter"></a>
+				<a href="https://www.linkedin.com" class="col-auto my-0 mx-1 p-0"><img class="img-fluid"  src="images/icono_linkedin.png" alt="icono Linkedin"></a>
+				<a href="https://www.facebook.com/" class="col-auto my-0 mx-1 p-0"><img class="img-fluid"  src="images/icono_fb.png" alt="icono Facebook"></a>
 			</section>
 		</footer>
 	</body>
